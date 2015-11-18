@@ -1,0 +1,94 @@
+<html>
+	<head>
+    	<link rel="stylesheet" href="font-awesome-4.4.0/css/font-awesome.css" type="text/css">
+    	<link rel="stylesheet" href="style.css">
+
+    	<script src="script/jquery-1.11.3.min.js"></script>
+    	<script type="text/javascript" src="script/getQuestions.js"></script>
+		
+		<script type="text/javascript">
+			$(document).ready(function() {
+				getQuestions();
+			});
+		</script>
+		<title>Daily English Lesson</title>
+
+	</head>
+	<body>
+		<div id="nav">
+			<a id="link" href="index.html">Home</a>
+		</div>
+
+		<div id="homePage">
+			<div id="newQuestion">
+				<i class="fa fa-plus"></i> &nbsp; Question
+			</div>
+
+			<div id="questionLists" class="views">
+				<table id="questionTable">
+
+				</table>
+			</div>
+		</div>
+		<!-- ADD NEW QUESTION -->
+		<div id="addNewQuestion" style="display:none;">
+			<div id="addQuestionHeader">
+				<span id="label">Question</span>
+			</div>
+			<form method="post" name="myform" id="myform">
+				<span class="inputname">Pepper's Text<span class="required">*</span></span>
+				<input type="text" required="true" name="talkText" class="inputText"/>
+
+				<p><span id="newGroup"><i class="fa fa-plus"></i>&nbsp; Group</span></p>
+
+				<div class="groups">
+
+					<div id="defaultGroup">
+						<input type="text" readonly value="1" name="group[]"/>
+						<p><span class="inputname">Answer Text<span class="required">*</span></span></p>
+						<input type="text" class="inputText" name="answerText_1[]"/>
+
+						<p><span class="inputname">Pepper Answer<span class="required">*</span></span></p>
+						<input type="text" class="inputText" name="pepperAnswer_1[]"/>	
+
+					</div>
+
+				</div>
+
+				<div id="elseAnswer">
+					<p><span class="label">Else</span></p>
+					<p><span class="inputname">Pepper Answer</span></p>
+					<input type="text" class="inputText" name="elseAnswer"/>
+				</div>
+
+				<input type="text" id="counter" readonly value="1"/>
+				<input id="submitBtn" type="submit" value="submit"/>
+			</form>
+		</div>
+
+	<!-- EDIT QUESTION -->
+
+	<div id="editQuestionDiv" style="display:none;">
+		<div id="editQuestionHeader">
+			<span id="label">Question</span>
+		</div>
+
+		<form method="post" name="myEditForm" id="myEditForm">
+			<p><span class="inputname">Pepper's Text<span class="required">*</span></span></p>
+			<input type="text" required="true" name="talkTextEdit" id="talkTextEdit" class="inputText"/>
+			<p>id: <input type="text" readonly id="pepperTextId" class="id"/></p>
+
+			<div class="editGroups">
+
+			</div>
+
+			<div id="editElseAnswer">
+				<p><span class="label">Else</span></p>
+				<p><span class="inputname">Pepper Answer</span></p>
+				<input type="text" class="inputText" name="elseAnswerEdit" id="elseAnswerEdit"/>
+				<p>id: <input type="text" readonly id="elseID" class="id"/></p>
+			</div>
+		</form>
+	</div>
+	</body>
+</html>
